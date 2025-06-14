@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic-Tac-Toe</title>
+    
+    
+    
+  <style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  border: 2px solid #333;
+  margin: 0 auto 20px auto;
+  background-color: #fff;
+}
+
+#gameboard div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+#gameboard div:hover {
+  background-color: #eee;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #367c39;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+</style>
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <div id="gameboard">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <p id="turn">Turn: X</p>
+    <button onclick="resetBoard()">Reset</button>
+    
+    
+    
+<script>
+let board = ["", "", "", "", "", "", "", "", ""];
+let turn = "X";
+let gameOver = false;
+
+const gameboard = document.getElementById("gameboard");
+const turnDisplay = document.getElementById("turn");
+
+gameboard.addEventListener("click", handleClick);
+
+function handleClick(event) {
+    if (gameOver) return;
+
+    const square = event.target;
+    const index = Array.from(gameboard.children).indexOf(square);
+
+    if (board[index] === "") {
+        board[index] = turn;
+        square.textContent = turn;
+
+        if (checkWin()) {
+            gameOver = true;
+            turnDisplay.textContent = Player ${turn} wins!;
+        } else if (checkDraw()) {
+            gameOver = true;
+            turnDisplay.textContent = "Draw!";
+        } else {
+            switchTurn();
+            turnDisplay.textContent = Turn: ${turn};
+        }
+    }
+}
+
+function switchTurn() {
+    turn = turn === "X" ? "O" : "X";
+}
+
+function checkWin() {
+    const lines = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+    ];
+
+    for (let i = 0; i < lines.length; i++) {
+        const [a, b, c] = lines[i];
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function checkDraw() {
+    return board.every(square => square !== "");
+}
+
+function resetBoard() {
+    board = ["", "", "", "", "", "", "", "", ""];
+    turn = "X";
+    gameOver = false;
+    turnDisplay.textContent = Turn: ${turn};
+
+    Array.from(gameboard.children).forEach(square => {
+        square.textContent = "";
+    });
+}
+</script>
+</body>
+</html>
