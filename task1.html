@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interactive Navigation Menu</title>
+<style>
+  /* Reset and base font */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Navigation Bar */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    padding: 15px 0;
+  }
+
+  /* When scrolled: background and shadow */
+  nav.scrolled {
+    background-color: pink;
+    color: #green;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    padding: 10px 0;
+  }
+
+  /* Container for menu items */
+  .menu {
+    display: flex;
+    gap: 80px;
+  }
+
+  /* Menu links */
+  .menu a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Hover effect on menu items */
+  .menu a:hover {
+    background-color: yellow;
+    color: ruby;
+  }
+
+  /* When nav is scrolled, invert hover colors for contrast */
+  nav.scrolled .menu a:hover {
+    background-color: skyblue;
+    color: #1a1a1a;
+  }
+
+  /* Content placeholder to show scrolling effect */
+  main {
+    margin-top: 80px;
+    padding: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    color: #222;
+  }
+
+  section {
+    margin-bottom: 60px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  h2 {
+    margin-bottom: 8px;
+    color: red;
+  }
+
+  p {
+    color: black;
+  }
+</style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="menu">
+      <a href="#home" tabindex="1">Home</a>
+      <a href="#about" tabindex="2">About</a>
+      <a href="#services" tabindex="3">Services</a>
+      <a href="#portfolio" tabindex="4">Portfolio</a>
+      <a href="#contact" tabindex="5">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home">
+      <h1>Welcome to Our Website</h1>
+      <p>Scroll down to see the navigation menu change style based on scroll position.</p>
+    </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We provide innovative solutions for modern web applications.</p>
+    </section>
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>Explore the diverse range of services we offer to boost your business.</p>
+    </section>
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <p>Take a look at our past projects and success stories.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Get in touch with us for your next project or inquiry.</p>
+    </section>
+  </main>
+
+  <script>
+    // Get navbar element
+    const navbar = document.getElementById('navbar');
+
+    // Detect scroll and toggle 'scrolled' class
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
