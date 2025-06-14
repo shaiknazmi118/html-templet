@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+  </head>
+  <body class="bg-gray-100 font-inter">
+    <header class="bg-indigo-600 text-white py-4 md:py-6">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <a href="#" class="text-xl font-semibold">My Portfolio</a>
+          <nav class="hidden md:block">
+            <ul class="flex space-x-6">
+              <li><a href="#home" class="hover:text-indigo-300 transition duration-300">Home</a></li>
+              <li><a href="#about" class="hover:text-indigo-300 transition duration-300">About</a></li>
+              <li><a href="#skills" class="hover:text-indigo-300 transition duration-300">Skills</a></li>
+              <li><a href="#projects" class="hover:text-indigo-300 transition duration-300">Projects</a></li>
+              <li><a href="#contact" class="hover:text-indigo-300 transition duration-300">Contact</a></li>
+            </ul>
+          </nav>
+          <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+      <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+        <div class="flex justify-end mb-4">
+          <button id="close-menu-btn" class="text-white focus:outline-none" aria-label="Close Menu">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+          </button>
+        </div>
+        <nav class="block">
+          <ul class="space-y-4">
+            <li><a href="#home" class="block text-lg text-white hover:text-indigo-300 transition duration-300">Home</a></li>
+            <li><a href="#about" class="block text-lg text-white hover:text-indigo-300 transition duration-300">About</a></li>
+            <li><a href="#skills" class="block text-lg text-white hover:text-indigo-300 transition duration-300">Skills</a></li>
+            <li><a href="#projects" class="block text-lg text-white hover:text-indigo-300 transition duration-300">Projects</a></li>
+            <li><a href="#contact" class="block text-lg text-white hover:text-indigo-300 transition duration-300">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <section id="home" class="bg-gradient-to-br from-indigo-100 to-white py-16 md:py-24">
+      <div class="container mx-auto px-4 text-center">
+        <img src="placeholder-image.jpg" alt="Your Professional Photo" class="rounded-full mx-auto mb-6 w-48 h-48 border-4 border-indigo-500 shadow-lg" />
+        <h1 class="text-3xl md:text-4xl font-semibold text-indigo-700 mb-4">Hello, I'm <span class="text-indigo-600">Your Name</span></h1>
+        <p class="text-xl text-gray-700 mb-6">I'm a passionate Web Developer</p>
+        <a href="#projects" class="bg-indigo-500 text-white py-3 px-6 rounded-full hover:bg-indigo-600 transition duration-300 text-lg font-semibold">View My Work</a>
+      </div>
+    </section>
+
+    <section id="about" class="bg-gray-100 py-16 md:py-24">
+      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold text-indigo-700 mb-4">About Me</h2>
+          <p class="text-gray-700 text-lg">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p class="text-gray-700 text-lg mt-4">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-indigo-600 mb-2">Education</h3>
+          <p class="text-gray-700 text-lg"><strong>University Name</strong> - Degree, Year</p>
+          <h3 class="text-xl font-semibold text-indigo-600 mt-4 mb-2">Professional Experience</h3>
+          <p class="text-gray-700 text-lg"><strong>Company Name</strong> - Job Title, Year</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="bg-gradient-to-br from-white to-indigo-100 py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-semibold text-indigo-700 mb-8 text-center">My Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-500"><path d="M12 20h9"></path><path d="M16.5 3.5a1.5 1.5 0 0 1 3 0V15a1.5 1.5 0 0 1-3 0z"></path><path d="M3 17v-4c0-1.38.6-2.54 1.5-3.2L12 3l7.5 6.8c.9.66 1.5 1.82 1.5 3.2v4"></path></svg>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">HTML</h3>
+              <p class="text-gray-600">Proficient</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-500"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">CSS</h3>
+              <p class="text-gray-600">Advanced</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-500"><path d="M9 9V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"></path><path d="M9 17v-4c0-1.333-.8-4-3-4"></path><path d="M15 17v-4c0-1.333.8-4 3-4"></path><path d="M9 17H5c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4"></path><path d="M15 17h4c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2h-4"></path></svg>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">JavaScript</h3>
+              <p class="text-gray-600">Intermediate</p>
+            </div>
+          </div>
+           <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-500">
+              <path d="M20 17v-6c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v6"></path>
+              <path d="M16 21H8c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2z"></path>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">React</h3>
+              <p class="text-gray-600">Beginner</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-500">
+              <path d="M9 18V5l12-2v13"></path>
+              <circle cx="6" cy="18" r="3"></circle>
+              <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Node.js</h3>
+              <p class="text-gray-600">Intermediate</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-500">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M2 7h20"></path>
+              <path d="M7 12v5"></path>
+              <path d="M12 12v5"></path>
+              <path d="M17 12v5"></path>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">SQL</h3>
+              <p class="text-gray-600">Beginner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="bg-gray-100 py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-semibold text-indigo-700 mb-8 text-center">My Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <img src="project1-placeholder.jpg" alt="Project 1" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold text-indigo-600 mb-2">Project 1</h3>
+            <p class="text-gray-700 mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <a href="#" class="text-indigo-500 hover:text-indigo-700 transition duration-300 font-semibold inline-flex items-center">
+              View Project <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            </a>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <img src="project2-placeholder.jpg" alt="Project 2" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold text-indigo-600 mb-2">Project 2</h3>
+            <p class="text-gray-700 mb-4">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+            <a href="#" class="text-indigo-500 hover:text-indigo-700 transition duration-300 font-semibold inline-flex items-center">
+              View Project <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            </a>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <img src="project3-placeholder.jpg" alt="Project 3" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold text-indigo-600 mb-2">Project 3</h3>
+            <p class="text-gray-700 mb-4">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a href="#" class="text-indigo-500 hover:text-indigo-700 transition duration-300 font-semibold inline-flex items-center">
+              View Project <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-gradient-to-br from-indigo-100 to-white py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-semibold text-indigo-700 mb-8 text-center">Contact Me</h2>
+        <div class="bg-white rounded-lg shadow-md p-8 md:p-12">
+          <form>
+            <div class="mb-6">
+              <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Your Name</label>
+              <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name" />
+            </div>
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Your Email</label>
+              <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email" />
+            </div>
+            <div class="mb-6">
+              <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Your Message</label>
+              <textarea id="message" name="message" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-y" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="bg-indigo-500 text-white py-3 px-6 rounded-full hover:bg-indigo-600 transition duration-300 text-lg font-semibold focus:outline-none focus:shadow-outline">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto px-4 text-center">
+        <p>© 2023 My Personal Portfolio. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+      const navLinks = document.querySelectorAll('.nav-links a');
+      const sections = document.querySelectorAll('section');
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      hamburgerBtn.addEventListener("click", toggleMobileMenu);
+      closeMenuBtn.addEventListener("click", toggleMobileMenu);
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", toggleMobileMenu);
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+          toggleMobileMenu();
+        }
+      });
+
+      function updateActiveNavLink() {
+        let currentSectionId = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === currentSectionId) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveNavLink);
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+
